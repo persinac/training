@@ -1,8 +1,8 @@
 {
-    "name": "my-bot",
+    "name": "jcperformance",
     "version": "1.0.0",
-    "author": "Kevin Novak",
-    "description": "A discord.js bot template written with TypeScript",
+    "author": "Alex Persinger",
+    "description": "Just Commit Performance workout and maxes tracker",
     "license": "MIT",
     "private": true,
     "engines": {

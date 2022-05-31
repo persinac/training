@@ -1,7 +1,7 @@
 {
     "bot": {
-        "name": "My Bot",
-        "author": "My Name"
+        "name": "JC Performance Max & Program Tracker",
+        "author": "Alex Persinger"
     },
     "commands": {
         "help": "help",
