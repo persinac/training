@@ -2,6 +2,7 @@ import { REST } from '@discordjs/rest';
 import { Options } from 'discord.js';
 import { createRequire } from 'node:module';
 
+
 import { Button } from './buttons/index.js';
 import { Command, HelpCommand, InfoCommand, TestCommand } from './commands/index.js';
 import {
@@ -18,7 +19,9 @@ import { Job } from './jobs/index.js';
 import { Bot } from './models/bot.js';
 import { Reaction } from './reactions/index.js';
 import { CommandRegistrationService, JobService, Logger } from './services/index.js';
+import * as MySQLConnector from './training-api/connectors/mysql.js';
 import { Trigger } from './triggers/index.js';
+
 
 const require = createRequire(import.meta.url);
 let Config = require('../config/config.json');
@@ -86,6 +89,9 @@ async function start(): Promise<void> {
         reactionHandler,
         new JobService(jobs)
     );
+
+    // Database pool
+    MySQLConnector.init()
 
     // Register
     if (process.argv[2] == 'commands') {
