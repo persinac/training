@@ -6,7 +6,9 @@
     "commands": {
         "help": "help",
         "info": "info",
-        "test": "test"
+        "test": "test",
+        "maxes": "maxes",
+        "maxes-add": "maxes-add"
     },
     "arguments": {
         "option": "option"

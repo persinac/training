@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 
 import { Button } from './buttons/index.js';
-import { Command, HelpCommand, InfoCommand, TestCommand } from './commands/index.js';
+import {Command, HelpCommand, InfoCommand, MaxesAddCommand, MaxesCommand, TestCommand} from './commands/index.js';
 import {
     ButtonHandler,
     CommandHandler,
@@ -45,7 +45,8 @@ async function start(): Promise<void> {
         new HelpCommand(),
         new InfoCommand(),
         new TestCommand(),
-        // TODO: Add new commands here
+        new MaxesCommand(),
+        new MaxesAddCommand(),
     ].sort((a, b) => (a.metadata.name > b.metadata.name ? 1 : -1));
 
     // Buttons

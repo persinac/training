@@ -3,7 +3,7 @@
  */
 import { execute } from '../connectors/mysql.js';
 import { IMaxOutAttempt, IMaxOutAttemptView } from '../models/maxoutattempt.js';
-import { MaxOutQueries } from '../queries/queries.js';
+import { MaxOutQueries } from '../queries/max_out.js';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const getTester = async () => {

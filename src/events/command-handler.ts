@@ -5,7 +5,6 @@ import { createRequire } from 'node:module';
 import { Command, CommandDeferType } from '../commands/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang, Logger } from '../services/index.js';
-import {getMaxOutPRsByUserAndMovement, getTester} from '../training-api/controllers/maxoutattempts.js'
 import { CommandUtils, InteractionUtils } from '../utils/index.js';
 import { EventHandler } from './index.js';
 
@@ -65,15 +64,12 @@ export class CommandHandler implements EventHandler {
 
         // TODO: Get data from database
         let data = new EventData();
-        const maxOutData = await getMaxOutPRsByUserAndMovement(`${intr.user.username}#${intr.user.discriminator}`, 'Back Squat')
-        // const maxOutData = await getTester()
 
         try {
             // Check if interaction passes command checks
             let passesChecks = await CommandUtils.runChecks(command, intr, data);
             if (passesChecks) {
                 // Execute the command
-                console.log(maxOutData)
                 await command.execute(intr, data);
             }
         } catch (error) {
