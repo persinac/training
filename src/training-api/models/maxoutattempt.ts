@@ -5,6 +5,7 @@ interface IMaxOutAttempt {
   id: number,
   user_id: number,
   movement_id: number,
+  kilos: number,
   weight: number,
   reps: number,
   is_pr: number,
@@ -18,6 +19,7 @@ interface IMaxOutAttemptView {
   user_id: number,
   movement_id: number,
   movement_name: string,
+  kilos: number,
   weight: number,
   reps: number,
   is_pr: number,
@@ -51,6 +53,7 @@ export const addMaxOutAttempt = async (maxOutAttempt: IMaxOutAttempt): Promise<I
   const result = await execute<IMaxOutAttemptView[]>(MaxOutQueries.AddMaxOutAttempt, [
     maxOutAttempt.user_id,
     maxOutAttempt.movement_id,
+    maxOutAttempt.kilos,
     maxOutAttempt.weight,
     maxOutAttempt.reps,
     maxOutAttempt.is_pr,

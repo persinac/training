@@ -7,6 +7,7 @@ export const MaxOutQueries = {
            m.user_id,
            m.movement_id,
            mvmnt.name AS movement_name,
+           m.kilos,
            m.weight,
            m.reps,
            m.is_pr,
@@ -28,6 +29,7 @@ export const MaxOutQueries = {
            m.user_id,
            m.movement_id,
            mvmnt.name AS movement_name,
+           m.kilos,
            m.weight,
            m.reps,
            m.is_pr,
@@ -47,6 +49,7 @@ export const MaxOutQueries = {
            m.user_id,
            m.movement_id,
            mvmnt.name AS movement_name,
+           m.kilos,
            m.weight,
            m.reps,
            m.is_pr,
@@ -59,8 +62,8 @@ export const MaxOutQueries = {
   `,
 
   AddMaxOutAttempt: `
-      INSERT INTO maxes (user_id, movement_id, weight, reps, is_pr, did_fail,
+      INSERT INTO maxes (user_id, movement_id, kilos, weight, reps, is_pr, did_fail,
                              attempted_date, created_on, updated_on)
-      VALUES (?, ?, ?, ?, ?, ?, ?, current_timestamp(), current_timestamp());
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), current_timestamp());
   `,
 };

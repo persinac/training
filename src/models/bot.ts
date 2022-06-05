@@ -123,7 +123,6 @@ export class Bot {
     }
 
     private async onMessage(msg: Message): Promise<void> {
-        console.log(msg)
         if (
             !this.ready ||
             (Debug.dummyMode.enabled && !Debug.dummyMode.whitelist.includes(msg.author.id))
